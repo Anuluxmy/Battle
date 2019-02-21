@@ -1,3 +1,6 @@
 <%=@player_1 %> Vs <%=@player_2 %>
+<br><%= @player_1 %>: 60HP</br>
 <br><%= @player_2 %>: 60HP</br>
-<a href="/attack">Attack</a>
+<form action="/player_1_attack">
+  <input type="submit" value="Attack">
+  </form>

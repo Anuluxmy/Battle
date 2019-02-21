@@ -23,11 +23,18 @@ class Battle < Sinatra::Base
     erb :play
   end
 
-  get '/attack' do
+  get '/player_1_attack' do
     @player_1 = $game.player_1.name
     @player_2 = $game.player_2.name
     $game.attack($game.player_2)
-    erb :attack
+    erb :player_1_attack
+  end
+
+  get '/player_2_attack' do
+    @player_1 = $game.player_1.name
+    @player_2 = $game.player_2.name
+    $game.attack($game.player_1)
+    erb :player_2_attack
   end
 
   # start the server if ruby file executed directly
